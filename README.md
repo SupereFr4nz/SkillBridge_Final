@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SkillBridge
 
 Two separate apps:
@@ -28,3 +29,6 @@ Two separate apps:
    Set `MONGODB_URI`, `JWT_SECRET`, `APP_TIMEZONE`, `ADMIN_SIGNUP_CODE`, and `CLIENT_ORIGIN` (your client's address).
 3. **Client (Vercel, Netlify):** root directory `client`, build `npm run build`, output `dist`.
    Set `VITE_API_URL=https://your-server-address/api`.
+=======
+# SkillBridge_Final
+>>>>>>> 4e97617402c14611113bf6d6f7f48b89825d34c6
