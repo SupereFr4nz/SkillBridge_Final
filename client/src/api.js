@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 
-// Same-origin "/api" by default. Set VITE_API_URL (e.g. https://your-api.onrender.com/api) if the API lives elsewhere.
-const BASE = import.meta.env.VITE_API_URL || "/api";
+// VITE_API_URL is the server origin; /api is added here. Empty keeps the local Vite proxy.
+const configuredApi = (import.meta.env.VITE_API_URL || "").trim().replace(/\/+$/, "");
+const apiOrigin = configuredApi.replace(/\/api$/i, "");
+const BASE = apiOrigin ? `${apiOrigin}/api` : "/api";
 export const getToken = () => localStorage.getItem("sb_token") || sessionStorage.getItem("sb_token");
 // "Remember me" keeps the login after the browser closes; otherwise it lasts for the tab only.
 export const setToken = (t, remember = true) => {
